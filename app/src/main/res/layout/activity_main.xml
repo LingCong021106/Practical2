@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="myName1"
+            type="com.example.practica2.MyName" />
+    </data>
+    <LinearLayout
     android:layout_height="wrap_content"
+    android:layout_width="match_parent"
     android:orientation="vertical"
     android:textAlignment="center"
     tools:context=".MainActivity">
@@ -12,7 +19,7 @@
         style="@style/NameStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name_text"
+        android:text="@={myName1.name}"
         android:textAlignment="center"
         android:textSize="20sp" />
 
@@ -39,7 +46,7 @@
         style="@style/NameStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@={myName1.nickname}"
         android:textSize="20sp"
         android:visibility="gone" />
 
@@ -70,3 +77,4 @@
     </ScrollView>
 
 </LinearLayout>
+</layout>
